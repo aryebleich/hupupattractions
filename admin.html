@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hupu Admin</title>
+    <meta
+      name="description"
+      content="Admin dashboard for managing Hupu balloon ride bookings and rental requests."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <div class="admin-panel">
+        <header class="admin-header">
+          <div>
+            <span class="eyebrow">Hupu Attractions</span>
+            <h1>Bookings Admin</h1>
+          </div>
+          <button id="adminLogout" class="admin-logout" type="button">Log out</button>
+        </header>
+
+        <div class="admin-body">
+          <div class="login-card">
+            <h2>Admin Login</h2>
+            <p class="login-status" aria-live="polite"></p>
+            <form id="adminLoginForm">
+              <label>
+                Email
+                <input type="email" name="email" placeholder="admin@hupupattractions.com" required />
+              </label>
+
+              <div style="height: 16px"></div>
+
+              <label>
+                Password
+                <input type="password" name="password" placeholder="Enter password" required />
+              </label>
+
+              <div style="height: 20px"></div>
+
+              <button type="submit" class="primary-button wide-button">Enter Dashboard</button>
+            </form>
+          </div>
+
+          <section class="dashboard" aria-live="polite">
+            <div class="dashboard-stats">
+              <div class="stat-card">
+                <span>Total requests</span>
+                <strong data-stat="total">0</strong>
+              </div>
+              <div class="stat-card">
+                <span>Confirmed</span>
+                <strong data-stat="confirmed">0</strong>
+              </div>
+              <div class="stat-card">
+                <span>Pending</span>
+                <strong data-stat="pending">0</strong>
+              </div>
+              <div class="stat-card">
+                <span>Upcoming</span>
+                <strong data-stat="upcoming">0</strong>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="bookings-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Ride</th>
+                    <th>Date</th>
+                    <th>Guests</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="bookingsTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
